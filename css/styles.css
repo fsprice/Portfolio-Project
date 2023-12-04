@@ -1,0 +1,310 @@
+/*Francine Price, December 4, 2023*/
+
+/*Global Styles*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;    
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+}
+  
+.logo {
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 5px;
+}
+
+nav li {
+    padding-left: 20px;
+}
+ 
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #2a2727;
+    position: relative; 
+}
+
+nav a:hover {
+    color: #2a2727;
+}
+
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: rgb(215, 101, 120);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+nav a:hover::after {
+    opacity: 1;
+}
+
+nav .menubar i {
+    color:rgb(215, 101, 120);
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 250px;
+
+}
+
+#click {
+    display: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+footer h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+}
+
+footer p {
+    padding-top: 15px;
+}
+.social-icon {
+    color: pink;
+    transition: color 0.4s;
+    text-decoration: none;
+    margin: 0 10px;
+    height: 25px;
+    width: 25px;
+    font-size: 25px;
+}
+
+.social-icon:hover {
+    color: palevioletred;
+}
+
+/*Styles for index page*/
+.sparkle-background {
+    background-image: url('../images/background-image.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 21px;
+    text-align: center;
+    grid-column: 1/4;
+    font-family: 'Caveat', cursive;
+}
+
+.intro h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 25px;
+
+}
+  
+.intro img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/*Styles for About page*/
+
+.colorful-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.2)) , url('../images/colorful-hallway.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+}
+
+.paper-background {
+    background-image: url('../images/paper-background.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background-image {
+    background-image: url(../images/colorful-hallway.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.introduction {
+    color: white;
+    max-width: 800px;
+    margin: 30px 10px;    
+}
+
+.introduction h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Caveat', cursive;
+    font-size: 60px;
+}
+
+.introduction p {
+    line-height: 1.8;
+}
+
+.education {
+    padding: 30px 0 30px 60px;
+    max-width: 900px;
+    width: 85%;
+    margin: 0 auto;    
+}
+
+.education h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
+    margin: 0;
+}
+
+.education h5 {
+    margin-bottom: 0;
+}
+.item-details h5 + p {
+    font-style: italic;
+}
+
+.item-details h5 ~ p {
+    margin: 0;
+}
+
+/*Styles for Projects page*/
+#project-section h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 60px;
+    color: white;
+}
+
+/*Styles for Contact page*/
+.web-design {
+    margin-top: 175px;
+}
+  
+form {
+    max-width: 600px;    
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    font-size: 18px;
+}
+
+.webDevImg {
+    border-radius: 50%;
+    width: 75%;
+}
+
+/* Styles for screens with a width less than 940px (mobile view) */
+@media (max-width: 940px) {
+    nav .menubar i {
+        display: block;
+    }
+
+    #click:checked ~ .menubar i::before {
+        content: "\f00d";
+    }
+
+    nav ul.desktop-menu {
+        display: none;
+    }
+
+    nav ul.mobile-menu {
+        position: fixed;
+        top: 100px;
+        left: -150%;
+        background-color: white;
+        height: 30vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.7s ease;
+        list-style: none;
+    }
+
+    #click:checked ~ ul.mobile-menu {
+        left: 0;
+    }
+
+    nav ul.mobile-menu li {
+        margin: 20px 0;
+    }
+
+    nav ul.mobile-menu li a {
+        color:#777373;
+        font-size: 20px;
+        display: block;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    nav ul.mobile-menu li a:hover {
+        color:rgb(215, 101, 120);
+        text-decoration: none;
+    }
+
+    .intro {
+        display: block;
+    }
+    .web-design {
+        display: none;
+    }
+    .project-caption {
+        margin-top: -260px;
+    }    
+    
+
+}
+
+/* Styles for screens with a width greater than 940px (desktop view) */
+@media (min-width: 941px) {
+    nav .menubar i {
+        display: none;
+    }
+
+    nav ul.desktop-menu {
+        display: flex;
+    }
+
+    nav ul.mobile-menu {
+        display: none;
+    }    
+    
+}
